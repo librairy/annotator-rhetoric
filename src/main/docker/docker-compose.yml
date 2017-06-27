@@ -1,0 +1,23 @@
+version: "2"
+services:
+ librairy-rhetoric:
+   container_name: librairy-rhetoric
+   image: librairy/annotator-rhetoric:1.8.0
+   restart: always
+   environment:
+    - LIBRAIRY_URI=minetur.dia.fi.upm.es:9999/api
+    - JAVA_OPTS=-Xmx8g -Xms512m
+    - LIBRAIRY_COLUMNDB_HOST=minetur.dia.fi.upm.es
+    - LIBRAIRY_EVENTBUS_HOST=minetur.dia.fi.upm.es
+   mem_limit: 8320m
+   memswap_limit: 8320m
+   #cpuset: 4-34
+   #external_links:
+   # - librairy-db
+   # - librairy-bus
+   #networks:
+   # - lnet
+#networks:
+#  lnet:
+#   external:
+#    name: core_lnet
